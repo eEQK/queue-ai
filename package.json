@@ -1,0 +1,12 @@
+{
+    "name": "ai-project",
+    "version": "1.0.0",
+    "description": "AI Project",
+    "scripts": {
+        "task1": "cd apps/queue-management-api && sleep 1 && npm run dev",
+        "task2": "cd apps/mock-iot-api && npm run dev",
+        "task3": "cd apps/queue-management-dashboard && npm run dev",
+        "dev": "npx concurrently 'npm run task1' 'npm run task2' 'npm run task3'",
+        "install": "cd apps/queue-management-api && npm install && cd ../mock-iot-api && npm install && cd ../queue-management-dashboard && npm install"
+    }
+}

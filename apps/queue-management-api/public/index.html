@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Emergency Room Queue Management API</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; }
+        .endpoint { margin: 20px 0; padding: 10px; background: #f5f5f5; }
+        .method { color: #0066cc; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <h1>Emergency Room Queue Management API</h1>
+    <p>Phase 2 - Core API Infrastructure</p>
+    
+    <h2>Available Endpoints:</h2>
+    
+    <div class="endpoint">
+        <span class="method">GET</span> /api/health - API health check
+    </div>
+    
+    <div class="endpoint">
+        <span class="method">GET</span> /api/queue/current - Current queue status
+    </div>
+    
+    <div class="endpoint">
+        <span class="method">GET</span> /api/queue/status - Queue status with trends and alerts
+    </div>
+    
+    <div class="endpoint">
+        <span class="method">GET</span> /api/queue/history/:hours - Historical queue data
+    </div>
+    
+    <div class="endpoint">
+        <span class="method">GET</span> /api/queue/analytics - Queue analytics
+    </div>
+    
+    <div class="endpoint">
+        <span class="method">GET</span> /api/iot/sensors - Sensor summaries
+    </div>
+    
+    <div class="endpoint">
+        <span class="method">GET</span> /api/iot/system-health - IoT system health
+    </div>
+    
+    <div class="endpoint">
+        <span class="method">GET</span> /api/dashboard/overview - Dashboard overview data
+    </div>
+    
+    <div class="endpoint">
+        <span class="method">GET</span> /api/dashboard/real-time - Real-time dashboard data
+    </div>
+    
+    <p><em>Note: Phase 3 will add ML prediction endpoints</em></p>
+</body>
+</html>
