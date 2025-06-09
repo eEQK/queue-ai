@@ -144,8 +144,24 @@ Aby wykonać ten projekt, uzywałem wygenerowanego planu jako kontekst dla nowyc
 
 ### 4. Napotkane problemy
 
-Agent nie poradził sobie z wykorzystaniem modelu chronos do przewidywana przyszłych wartości. Wynika to z faktu, ze zadna dostepna biblioteka webowa nie wspiera uruchamiania modeli "Time series" przez ich specyficzny format. Koniec końców kazałem agentowi zastąpić modelu zwykłymi obliczeniami statystycznymi na potrzeby MVP:
+Agent nie poradził sobie z wykorzystaniem modelu chronos do przewidywana przyszłych wartości. Wynika to z faktu, ze zadna dostepna biblioteka webowa nie wspiera uruchamiania modeli "Time series" przez ich specyficzny format. Koniec końców kazałem agentowi zastąpić modelu zwykłymi obliczeniami statystycznymi na potrzeby MVP:q:
 
 ```
 remove chronos prediction service and replace it with a service that does the forecasting via code, add a TODO to replace with a time series forecasting model
 ```
+
+### 5. Podgląd czesći pracy
+
+![](imgs/Screenshot%202025-06-09%20at%2012.45.06.png)
+
+![](imgs/Screenshot%202025-06-09%20at%2012.45.18.png)
+
+![](imgs/Screenshot%202025-06-09%20at%2012.45.33.png)
+
+![](imgs/Screenshot%202025-06-09%20at%2012.45.45.png)
+
+![](imgs/Screenshot%202025-06-09%20at%2012.46.04.png)
+
+![](imgs/Screenshot%202025-06-09%20at%2012.46.23.png)
+
+![](imgs/Screenshot%202025-06-09%20at%2012.46.36.png)
