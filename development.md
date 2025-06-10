@@ -138,6 +138,8 @@ update the plan to use bun commands instead of npm and also use typescript. then
 
 ### Plan ostateczny
 
+Znajduje sie w README.md
+
 ### 3. Praca z kodem
 
 Aby wykonać ten projekt, uzywałem wygenerowanego planu jako kontekst dla nowych sesji agenta, które były tworzone na potrzeby kazdej kolejnej fazy implementacji. 
