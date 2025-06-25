@@ -1,0 +1,22 @@
+FROM oven/bun:alpine
+
+# Install system dependencies
+RUN apk add --no-cache git curl ca-certificates
+
+WORKDIR /app
+
+# Copy package files
+COPY apps/queue-management-api/package.json ./
+COPY apps/queue-management-api/bun.lock* ./
+
+# Install dependencies
+RUN bun install
+
+# Copy source code
+COPY apps/queue-management-api/ ./
+
+# Expose port
+EXPOSE 3000
+
+# Start the application
+CMD ["bun", "run", "dev"]

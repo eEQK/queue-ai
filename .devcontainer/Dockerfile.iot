@@ -1,0 +1,22 @@
+FROM oven/bun:alpine
+
+# Install system dependencies
+RUN apk add --no-cache git curl ca-certificates
+
+WORKDIR /app
+
+# Copy package files
+COPY apps/mock-iot-api/package.json ./
+COPY apps/mock-iot-api/bun.lock* ./
+
+# Install dependencies
+RUN bun install
+
+# Copy source code
+COPY apps/mock-iot-api/ ./
+
+# Expose port
+EXPOSE 3001
+
+# Start the application
+CMD ["bun", "run", "dev"]

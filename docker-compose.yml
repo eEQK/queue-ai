@@ -1,0 +1,74 @@
+version: '3.8'
+
+services:
+  queue-management-api:
+    build:
+      context: .
+      dockerfile: .devcontainer/Dockerfile.api
+    working_dir: /app
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=development
+      - PORT=3000
+      - HOST=0.0.0.0
+      - MOCK_IOT_API_URL=http://mock-iot-api:3001
+      - IOT_POLLING_INTERVAL=30000
+      - LOG_LEVEL=info
+    volumes:
+      - ./apps/queue-management-api:/app:cached
+      - queue_api_node_modules:/app/node_modules
+    depends_on:
+      - mock-iot-api
+    command: bun run dev
+    networks:
+      - ai-network
+    restart: unless-stopped
+
+  mock-iot-api:
+    build:
+      context: .
+      dockerfile: .devcontainer/Dockerfile.iot
+    working_dir: /app
+    ports:
+      - "3001:3001"
+    environment:
+      - NODE_ENV=development
+      - PORT=3001
+      - HOST=0.0.0.0
+    volumes:
+      - ./apps/mock-iot-api:/app:cached
+      - mock_iot_node_modules:/app/node_modules
+    command: bun run dev
+    networks:
+      - ai-network
+    restart: unless-stopped
+
+  dashboard:
+    build:
+      context: .
+      dockerfile: .devcontainer/Dockerfile.dashboard
+    working_dir: /app
+    ports:
+      - "5173:5173"
+    environment:
+      - NODE_ENV=development
+      - VITE_API_URL=http://localhost:3000
+    volumes:
+      - ./apps/queue-management-dashboard:/app:cached
+      - dashboard_node_modules:/app/node_modules
+    depends_on:
+      - queue-management-api
+    command: bun run dev -- --host 0.0.0.0
+    networks:
+      - ai-network
+    restart: unless-stopped
+
+volumes:
+  queue_api_node_modules:
+  mock_iot_node_modules:
+  dashboard_node_modules:
+
+networks:
+  ai-network:
+    driver: bridge
