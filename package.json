@@ -16,14 +16,4 @@
         "docker:stop": "./scripts/stop.sh",
         "docker:dev": "./scripts/dev.sh"
     }
-}: "ai-project",
-"version": "1.0.0",
-"description": "AI Project",
-"scripts": {
-    "task1": "cd apps/queue-management-api && sleep 1 && bun run dev",
-    "task2": "cd apps/mock-iot-api && bun run dev",
-    "task3": "cd apps/queue-management-dashboard && bun run dev",
-    "dev": "bunx concurrently 'bun run task1' 'bun run task2' 'bun run task3'",
-    "install": "cd apps/queue-management-api && bun install && cd ../mock-iot-api && bun install && cd ../queue-management-dashboard && bun install"
-    }
 }
